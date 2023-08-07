@@ -75,12 +75,21 @@ public class Assignment {
             }
             double total = marks1 + marks2 + marks3;
             double average = total/3;
-            String status = average >= 75 ? "\033[34;1mDP\033[30;0m" : average >= 65 ? "\033[32;1CP\033[30;0m" : average >= 55 ? "\033[33;1mP\033[30;0m" : "\033[31;1mF\033[30;0m";
+            String status = average >= 75 ? "\033[34;1mDP\033[30;0m" : average >= 65 ? "\033[32;1mCP\033[30;0m" : average >= 55 ? "\033[33;1mP\033[30;0m" : "\033[31;1mF\033[30;0m";
+            String sub1Stat = marks1 >= 75 ? "\033[34;1mDP\033[30;0m" : marks1 >= 65 ? "\033[32;1mCP\033[30;0m" : marks1 >= 55 ? "\033[33;1mP\033[30;0m" : "\033[31;1mF\033[30;0m";
+            String sub2Stat = marks2 >= 75 ? "\033[34;1mDP\033[30;0m" : marks2 >= 65 ? "\033[32;1mCP\033[30;0m" : marks2 >= 55 ? "\033[33;1mP\033[30;0m" : "\033[31;1mF\033[30;0m";
+            String sub3Stat = marks3 >= 75 ? "\033[34;1mDP\033[30;0m" : marks3 >= 65 ? "\033[32;1mCP\033[30;0m" : marks3 >= 55 ? "\033[33;1mP\033[30;0m" : "\033[31;1mF\033[30;0m";
 
             System.out.printf("Name   : %s%s%s\n",boldStart,name.toUpperCase(),boldEnd);
             System.out.printf("Age    : %s years old\n",age);
             System.out.printf("Status : %s\n",status);
-            System.out.printf("Total  : %.2f       Average  : %.2f",total,average);
+            System.out.printf("Total  : %.2f     Average  : %.2f%s",total,average,"%");
+            System.out.println();
+            System.out.printf("|%6s|%6s|%2s|\n","Sub", "Marks", "Status");
+            System.out.printf("|SE-%03d|%6.2f|%20s|\n",Integer.valueOf(sub1.substring(3)),marks1,sub1Stat);
+            System.out.printf("|SE-%03d|%6.2f|%20s|\n",Integer.valueOf(sub2.substring(3)),marks2,sub2Stat);
+            System.out.printf("|SE-%03d|%6.2f|%20s|\n",Integer.valueOf(sub3.substring(3)),marks3,sub3Stat);
+
         }
 
     }
