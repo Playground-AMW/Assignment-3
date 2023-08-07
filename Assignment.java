@@ -31,9 +31,13 @@ public class Assignment {
                 break myBlock;
             }
 
-            // System.out.print("Enter your marks 1 : ");
-            // int marks1 = scanner.nextInt();
-            // scanner.nextLine();
+            System.out.print("Enter your marks 1 : ");
+            int marks1 = scanner.nextInt();
+            scanner.nextLine();
+            if (marks1 < 0 | marks1 > 100) {
+                System.out.printf("%sinvalid marks!%s\n", redStart, redEnd);
+                break myBlock;
+            }
 
             // System.out.print("Enter your subject 2: ");
             // String sub2 = scanner.nextLine();
