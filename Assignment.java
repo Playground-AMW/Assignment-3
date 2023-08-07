@@ -41,14 +41,18 @@ public class Assignment {
 
             System.out.print("Enter your subject 2: ");
             String sub2 = scanner.nextLine();
-            if (!sub1.startsWith("SE-") | sub1.equals(sub2)) {
+            if (!sub2.startsWith("SE-") | sub2.equals(sub1)) {
                 System.out.printf("%sinvalid subject name!%s\n", redStart, redEnd);
                 break myBlock;
             }
 
-            // System.out.print("Enter your marks 2 : ");
-            // int marks2 = scanner.nextInt();
-            // scanner.nextLine();
+            System.out.print("Enter your marks 2 : ");
+            int marks2 = scanner.nextInt();
+            scanner.nextLine();
+            if (marks2 < 0 | marks2 > 100) {
+                System.out.printf("%sinvalid marks!%s\n", redStart, redEnd);
+                break myBlock;
+            }
 
             // System.out.print("Enter your subject 3: ");
             // String sub3 = scanner.nextLine();
