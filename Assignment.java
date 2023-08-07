@@ -39,8 +39,12 @@ public class Assignment {
                 break myBlock;
             }
 
-            // System.out.print("Enter your subject 2: ");
-            // String sub2 = scanner.nextLine();
+            System.out.print("Enter your subject 2: ");
+            String sub2 = scanner.nextLine();
+            if (!sub1.startsWith("SE-") | sub1.equals(sub2)) {
+                System.out.printf("%sinvalid subject name!%s\n", redStart, redEnd);
+                break myBlock;
+            }
 
             // System.out.print("Enter your marks 2 : ");
             // int marks2 = scanner.nextInt();
