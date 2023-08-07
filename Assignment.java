@@ -4,27 +4,32 @@ public class Assignment {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        myBlock:
-        {
+
+        String redStart = "\033[31m";
+        String redEnd = "\033[30m";
+
+        myBlock: {
             System.out.print("Enter your name     : ");
             String name = scanner.nextLine();
-            if (name.startsWith(" ") | name.length()==0) {
-                System.out.printf("%sinvalid name!%s\n","\033[31m","\033[30m");
+            if (name.startsWith(" ") | name.length() == 0) {
+                System.out.printf("%sinvalid name!%s\n", redStart, redEnd);
                 break myBlock;
             }
 
             System.out.print("Enter your age      : ");
             int age = scanner.nextInt();
             scanner.nextLine();
-            if (age < 10 | age > 18){
-            System.out.printf("%sinvalid age!%s\n","\033[31m","\033[30m");
-                break myBlock;                
+            if (age < 10 | age > 18) {
+                System.out.printf("%sinvalid age!%s\n", redStart, redEnd);
+                break myBlock;
             }
 
             System.out.print("Enter your subject 1: ");
             String sub1 = scanner.nextLine();
-            if ()
-
+            if (!sub1.startsWith("SE-")) {
+                System.out.printf("%sinvalid subject name!%s\n", redStart, redEnd);
+                break myBlock;
+            }
 
             // System.out.print("Enter your marks 1 : ");
             // int marks1 = scanner.nextInt();
