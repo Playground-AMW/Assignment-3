@@ -7,6 +7,11 @@ public class Assignment {
 
         String redStart = "\033[31m";
         String redEnd = "\033[30m";
+        String boldStart = "\033[34;1m";
+        String boldEnd = "\033[30;0m";
+        String greenStart = "\033[32;1m";
+        String greenEnd = "\033[30;0m";
+
 
         myBlock: {
             System.out.print("Enter your name     : ");
@@ -32,7 +37,7 @@ public class Assignment {
             }
 
             System.out.print("Enter your marks 1 : ");
-            int marks1 = scanner.nextInt();
+            double marks1 = scanner.nextDouble();
             scanner.nextLine();
             if (marks1 < 0 | marks1 > 100) {
                 System.out.printf("%sinvalid marks!%s\n", redStart, redEnd);
@@ -47,7 +52,7 @@ public class Assignment {
             }
 
             System.out.print("Enter your marks 2 : ");
-            int marks2 = scanner.nextInt();
+            double marks2 = scanner.nextDouble();
             scanner.nextLine();
             if (marks2 < 0 | marks2 > 100) {
                 System.out.printf("%sinvalid marks!%s\n", redStart, redEnd);
@@ -62,12 +67,21 @@ public class Assignment {
             }
 
             System.out.print("Enter your marks 3 : ");
-            int marks3 = scanner.nextInt();
+            double marks3 = scanner.nextDouble();
             scanner.nextLine();
             if (marks3 < 0 | marks3 > 100) {
                 System.out.printf("%sinvalid marks!%s\n", redStart, redEnd);
                 break myBlock;
             }
+            double total = marks1 + marks2 + marks3;
+            double average = total/3;
+            String status = average >= 75 ? "\033[34;1mDP\033[30;0m" : average >= 65 ? "\033[32;1CP\033[30;0m" : average >= 55 ? "\033[33;1mP\033[30;0m" : "\033[31;1mF\033[30;0m";
+
+            System.out.printf("Name   : %s%s%s\n",boldStart,name.toUpperCase(),boldEnd);
+            System.out.printf("Age    : %s years old\n",age);
+            System.out.printf("Status : %s\n",status);
+            System.out.printf("Total  : %.2f       Average  : %.2f",total,average);
         }
+
     }
 }
