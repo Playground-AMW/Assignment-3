@@ -8,7 +8,7 @@ public class Assignment {
         {
             System.out.print("Enter your name     : ");
             String name = scanner.nextLine();
-            if (name.startsWith("  ")) {
+            if (name.startsWith(" ") | name.length()==0) {
                 System.out.printf("%sinvalid name!%s\n","\033[31m","\033[30m");
                 break myBlock;
             }
@@ -21,8 +21,10 @@ public class Assignment {
                 break myBlock;                
             }
 
-            // System.out.print("Enter your subject 1: ");
-            // String sub1 = scanner.nextLine();
+            System.out.print("Enter your subject 1: ");
+            String sub1 = scanner.nextLine();
+            if ()
+
 
             // System.out.print("Enter your marks 1 : ");
             // int marks1 = scanner.nextInt();
