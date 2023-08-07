@@ -61,11 +61,13 @@ public class Assignment {
                 break myBlock;
             }
 
-            // System.out.print("Enter your marks 3 : ");
-            // int marks3 = scanner.nextInt();
-            // scanner.nextLine();
-
-            System.out.println(name);
+            System.out.print("Enter your marks 3 : ");
+            int marks3 = scanner.nextInt();
+            scanner.nextLine();
+            if (marks3 < 0 | marks3 > 100) {
+                System.out.printf("%sinvalid marks!%s\n", redStart, redEnd);
+                break myBlock;
+            }
         }
     }
 }
